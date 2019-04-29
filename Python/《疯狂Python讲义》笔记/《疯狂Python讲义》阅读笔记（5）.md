@@ -22,18 +22,18 @@ except(Error1,Error2,...) as e:
 ### 异常类的继承体系
 Python的所有异常类都从BaseException派生而来，提供了丰富的异常类，这些异常类之间有严格的继承关系。
 + BaseException
-++ GeneratorExit
-++ Exception
-+++ ArithmeticError
-++++ ZeroDivisionError
-++++ FloatingPointError
-++++ OverflowError
-+++ BufferError
-+++ LookupError
-++++ IndexError
-++++ KeyError
-++ SystemExit
-++ KeyboardInterrupt
+  + GeneratorExit
+  + Exception
+    + ArithmeticError
+    + ZeroDivisionError
+    + FloatingPointError
+    + OverflowError
+    + BufferError
+    + LookupError
+    + IndexError
+    + KeyError
+  + SystemExit
+  + KeyboardInterrupt
 
 ### 多异常捕获
 
@@ -154,8 +154,8 @@ raise语句处于except块中，它将会自动引发当前上下文激活的异
 except 块为空就是假装不知道甚至瞒天过海，这是最可怕的事情一一程序出了错误，所有人都看不到任何异常，但整个应用可能已经彻底坏了。
 
 + 建议对异常采取适当措施：
-++ **处理异常**：对异常进行合适的修复，然后绕过异常发生的地方继续进行
-++ **重新引发新的异常**：把在当前运行环境下能做的事情尽量做完，然后进行转译，把异常包装成当前层的异常，重新传给上层调用者。
-++ **在合适的层处理异常**:。如果当前层不清楚如何处理异常，就不要在当前层使用except语句来捕获该异常，让上层调用者来负责处理该异常。
+  + **处理异常**：对异常进行合适的修复，然后绕过异常发生的地方继续进行
+  + **重新引发新的异常**：把在当前运行环境下能做的事情尽量做完，然后进行转译，把异常包装成当前层的异常，重新传给上层调用者。
+  + **在合适的层处理异常**:。如果当前层不清楚如何处理异常，就不要在当前层使用except语句来捕获该异常，让上层调用者来负责处理该异常。
 
 
